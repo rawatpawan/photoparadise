@@ -31,7 +31,7 @@
   
   /* Bold text for headings or any element */
   h1, h2, h3, h4, h5, h6, .bold-text {
-    font-weight: 900; /* Bold weight */
+    font-weight: 600; /* Bold weight */
     color: #000000;
   }
   
@@ -42,6 +42,7 @@
     margin: 0px;
     padding: 0px;
     font-size: 1rem;
+    font-weight: 500;
   }
   
   
@@ -256,6 +257,18 @@
     max-height: 80px; 
     width: auto; 
 }
+.desktopMenu .dropdown-menu{
+  padding: 0;
+  font-size: 14px;
+}
+.desktopMenu .dropdown-item{
+  font-weight: 600;
+  font-size: 14px;
+  padding: 15px 30px;
+}
+.desktopMenu .dropdown:hover .dropdown-menu {
+  display: block;
+}
 
 #header {
     position: relative;
@@ -371,7 +384,10 @@
     font-size: 17px;
     line-height: 1.5;
     margin: 0 0 17px 0;
-    font-weight: 300;
+    font-weight: 400;
+}
+.testimonials h3{
+   font-size: 2.8rem;
 }
 .testimonial-name {
     margin: -17px auto 0;
