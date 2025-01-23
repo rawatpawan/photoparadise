@@ -550,16 +550,177 @@
     /* margin-right: .5rem; */
 }
 
+.page-header {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.page-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.page-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 4rem;
+  font-weight: 600;
+  z-index: 2; 
+  text-align: center;
+  text-transform: capitalize;
+}
+.container-fluid{
+  width: 96%;
+}
+
+.navbar .container-fluid{
+  width: 100%;
+}
+
+.portfolio-grid-container {
+  display: grid;
+  gap: 20px; /* Space between grid items */
+  padding: 20px;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+}
+
+.portfolio-grid-item {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 8%;
+  margin-top: 8%;
+  position: relative;
+  transition: all 600ms cubic-bezier(.3,.58,.55,1);
+}
+.portfolio-grid-item .portfolio-thumbnail {
+  width: 100%;
+  height: 300px; 
+  object-fit: cover; 
+}
+
+.portfolio-caption{
+  background: #ffffff;
+  left: 5%;
+  bottom: -50px;
+  position: absolute;
+  padding: 20px 35px 20px 35px;
+  width: 90%;
+  transition: all 850ms cubic-bezier(.785,.135,.15,.86) 0ms;
+  transform: translateY(0);
+}
+.portfolio-grid-item:hover .portfolio-caption{
+  transition: all 850ms cubic-bezier(.785,.135,.15,.86) 0ms;
+  transform: translateY(-70px)
+}
+.portfolio-caption h3{
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+.popup-arrow img{
+  width: 6%;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-15px) perspective(1px) scale(.2);
+  transition: transform 0.3s cubic-bezier(.785,.135,.15,.86) 200ms,opacity 0.2s cubic-bezier(0,1,.5,1) 200ms;
+  opacity: 0
+}
+.portfolio-grid-item:hover .popup-arrow img{
+  opacity: 1;
+  transform: translateY(-15px) scale(1) perspective(1px);
+  transition: transform 0.3s cubic-bezier(.785,.135,.15,.86) 200ms,opacity 0.2s cubic-bezier(0,1,.5,1) 200ms
+}
 
 
 
+.common-gallery {
+  display: grid;
+  gap: 40px; /* Space between grid items */
+  padding: 20px;
+  grid-template-columns: repeat(4, 1fr); /* 3 columns by default */
+}
 
+.common-gallery-item img{
+  display: block;
+  width: 100%;
+  transition: transform 2.5s ease; 
+   height: 400px;
+  object-fit: cover; 
+}
+.common-gallery-item a{
+  position: relative;
+  display: inline-block;
+  overflow: hidden; 
+}
 
+.common-gallery-item a:hover img {
+  transform: scale(1.4); 
+}
 
+.common-gallery-item a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); 
+  opacity: 0;
+  transition: opacity 1s ease; 
+  z-index: 1;
+}
+.border-gallery{
+  position: absolute;
+  border: 1px solid #fff;
+  z-index: 1000;
+  width: 90%;
+  height: 90%;
+  left: 50%;
+  top: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease; 
 
+}
+.border-gallery2{
+  position: absolute;
+  border: 1px solid #fff;
+  z-index: 1000;
+  width: 80%;
+  height: 80%;
+  left: 50%;
+  top: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 1s ease; 
 
+}
 
-
+.common-gallery-item a:hover .border-gallery {
+  opacity: 1; 
+}
+.common-gallery-item a:hover .border-gallery2 {
+  opacity: 1; 
+}
+.common-gallery-item a:hover::after {
+  opacity: 1; 
+}
 
 
   /** RESPONSIVE MEDIA QUERY **/
@@ -589,6 +750,13 @@
         flex: 1 1 100% !important;
         max-width: 100% !important;
     }
+    .portfolio-grid-container {
+      grid-template-columns: repeat(1, 1fr); 
+    }
+    .common-gallery {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    
   }
   
   /* Tablets in portrait mode */
@@ -615,6 +783,12 @@
     .footer-item {
         flex: 1 1 100% !important;
         max-width: 100% !important;
+    }
+    .portfolio-grid-container {
+      grid-template-columns: repeat(1, 1fr); 
+    }
+    .common-gallery {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
   
