@@ -731,7 +731,15 @@ label{
   border: 1px solid #000;
   padding: 1rem;
 }
+.chatbot {
+  position: fixed;
+  z-index: 2;
+  right: 2%;
+  bottom: 0%;
+  transform: translateY(-50%);
+  width: auto;
 
+}
 
   /** RESPONSIVE MEDIA QUERY **/
   
